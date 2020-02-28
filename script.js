@@ -6,10 +6,11 @@ const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
 const clipboardEl = document.getElementById('clipboard');
-
+const errorEl = document.getElementById('error');
+const error2El = document.getElementById('error2');
 
 // Password generator function is called based om user entry and event of user pushing the button /
-generate.addEventListener('click', (event) => {
+generateEl.addEventListener('click', (event) => {
     event.preventDefault();
     const length = +lengthEl.value;
 	const hasLower = lowercaseEl.checked;
@@ -17,6 +18,15 @@ generate.addEventListener('click', (event) => {
 	const hasNumber = numbersEl.checked;
 	const hasSymbol = symbolsEl.checked;
 
+    if ((lengthEl.value > 64) || (lengthEl.value < 8)) {
+        error2El.innerText = "Length only between 8 and 64";
+        length = 0;
+    } else {
+        error2El.innerText = "";
+    }
+    if ((hasLower + hasUpper + hasNumber + hasSymbol) === 4) {
+        errorEl.innerText = ""
+    }
 	resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
@@ -26,8 +36,14 @@ function generatePassword(lower, upper, number, symbol, length) {
         const typesCount = lower + upper + number + symbol;
 
         if(typesCount === 0) {
+            errorEl.innerText = "Choose atleast one checkbox elements";
             return '';
         }	
+
+        if(typesCount < 4) {
+            errorEl.innerText = "By choosing all 4 elements create a reliable Password!"
+        }	
+
         // creating a loop to produce password content one by one
         for(let i=0; i<length; i+=typesCount) {
             if (lower) { generatedPassword += getRandomLower(); }

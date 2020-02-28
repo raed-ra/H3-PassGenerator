@@ -6,11 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3da1a747b2.js" crossorigin="anonymous"></script>
     <title>PassWord Gen</title>
+    <style>
+      .bg-RP {
+          background-color:#007cae;     
+         }
+  </style>
 </head>
 <body>
 
+<!--Navbar Start-->
+<nav class="container-fluid bg-RP">
+  <div class="navbar container mb-3 navbar-expand-lg navbar-dark bg-RP">
+  
+      <a class="navbar-brand" href="index.html">RIPortfolios</a>
+      
+      
+      <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-toggle="collapse" 
+          data-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <a class="nav-link" href="#front-end">FrontEnd Projects <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#back-end">BackEnd Projects</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="Login.html">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" 
+              href="#" 
+              id="navbarDropdown" 
+              role="button" 
+              data-toggle="dropdown" 
+              aria-haspopup="true" 
+              aria-expanded="false">
+              Lets Connect
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="ContactUs.html">Contact us</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="about.html">About</a>
+          </div>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </nav> 
+<!--Navbar end-->
+
+
+    <header class="jumbotron bg-light"> <!--Portfolio Header start-->
+      <div class="row">    <!--Portfolio Header row start-->
+              <div class="col-12 order-2 order-lg-1 col-lg-6">
+                  <h1 class="display-4">Password Generator</h1> 
+              </div>
+              
+              <div class="col-12 order-1 order-lg-2 col-lg-6">
+              </div>
+      </div>  <!--Portfolio Header row end-->
+    </header> <!--Portfolio Header end-->
+
+
   <main class="container mt-5">
-    
     <form>
         <div class="form-group row">
           <label for="outputPassword" class="col-5 col-lg-3 col-form-label">Generated Password</label>
@@ -18,24 +94,26 @@
             <input type="text" class="form-control" id="result" placeholder="result">
           </div>
           <div class="col-1 col-lg-1">
-          <button class="btn btn-primary" id="clipboard">
-            <i class="far fa-clipboard fa-2x"></i>
-          </button>
-        </div>
+            <button class="btn btn-primary" id="clipboard">
+              <i class="far fa-clipboard fa-2x"></i>
+            </button>
+          </div>
         </div>
 
-      
         <div class="form-group row">
           <label for="lengthofPassword" class="col-5 col-lg-3 col-form-label">Length of Password</label>
           <div class="col-3 col-lg-2">
-            <input type="number" class="form-control" id="length" placeholder=""  value='15'>
+            <input type="number" class="form-control" id="length" placeholder=""  min='8' max='64' value='64'>
+          </div>
+          <div class="col-4 col-lg-5">
+            <p class="text-warning" id="error2"></p>
           </div>
         </div>
 
         <fieldset class="form-group">
           <div class="row">
             <legend class="col-form-label col-sm-3 pt-0">Which elements you want in the password?</legend>
-            <div class="col-sm-9">
+            <div class="col-sm-4">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="" id="uppercase" value="option1" checked >
                 <label class="form-check-label" for="">
@@ -61,6 +139,9 @@
                 </label>
               </div>
             </div>
+            <div class="col-sm-5">
+              <p for="warning" class="col-form-label text-warning" id="error"></p>
+            </div>
           </div>
         </fieldset>
 
@@ -71,6 +152,23 @@
         </div>
       </form>  
     </div>
+  </main>
+
+  <footer class="container-fluid mt-5 bg-RP text-dark">
+    <div class="container">
+        <div class="row mb-0 text-left py-5"> <!--Portfolio footer start-->
+            <div class="col py-5 px-0">
+            <h1 class="display-5">R-Innovative Protfolios</h1>
+
+            <ul class="list-group list-group-flush bg-RP text-dark">
+                <li class="list-group-item font-weight-bold bg-RP text-light">Raed</li>
+                <li class="list-group-item bg-RP text-light">Raed Fun Protfolios</li>
+            </ul>
+            </div>
+        </div>  <!--Portfolio footer end--> 
+    </div>
+  </footer>
+  
 
     <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
