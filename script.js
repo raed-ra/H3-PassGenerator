@@ -27,7 +27,8 @@ generateEl.addEventListener('click', (event) => {
     if ((hasLower + hasUpper + hasNumber + hasSymbol) === 4) {
         errorEl.innerText = ""
     }
-	resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    resultEl.style.width = resultEl.value.length;
 });
 
 //***************** generate password function */
@@ -52,7 +53,6 @@ function generatePassword(lower, upper, number, symbol, length) {
             if (symbol) { generatedPassword += getRandomSymbol(); }
         }	
         const finalPassword = generatedPassword.slice(0, length);
-        console.log(finalPassword);
         return finalPassword; 
    }
 //****************** */
