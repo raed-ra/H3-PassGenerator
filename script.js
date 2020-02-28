@@ -36,7 +36,7 @@ function generatePassword(lower, upper, number, symbol, length) {
         const typesCount = lower + upper + number + symbol;
 
         if(typesCount === 0) {
-            errorEl.innerText = "Choose atleast one checkbox elements";
+            errorEl.innerText = "Choose atleast one checkbox element!";
             return '';
         }	
 
