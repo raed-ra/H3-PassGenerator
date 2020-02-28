@@ -28,7 +28,6 @@ generateEl.addEventListener('click', (event) => {
         errorEl.innerText = ""
     }
     resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
-    resultEl.style.width = resultEl.value.length;
 });
 
 //***************** generate password function */
