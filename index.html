@@ -89,18 +89,6 @@
   <main class="container mt-5">
     <form>
         <div class="form-group row">
-          <label for="outputPassword" class="col-5 col-lg-3 col-form-label">Generated Password</label>
-          <div class="col-6 col-lg-3">
-            <input type="text" class="form-control" id="result" placeholder="result">
-          </div>
-          <div class="col-1 col-lg-1">
-            <button class="btn btn-primary" id="clipboard">
-              <i class="far fa-clipboard fa-2x"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="form-group row">
           <label for="lengthofPassword" class="col-5 col-lg-3 col-form-label">Length of Password</label>
           <div class="col-3 col-lg-2">
             <input type="number" class="form-control" id="length" placeholder=""  min='8' max='64' value='64'>
@@ -145,11 +133,28 @@
           </div>
         </fieldset>
 
+
         <div class="form-group row">
-          <div class="col-sm-10">
-            <button class="btn btn-primary mx-auto" id="generate">Generate password</button>
+          <label for="outputPassword" class="col-3 col-form-label">Generated Password</label>
+          <div class="col">
+            <input type="text" class="form-control" id="result" readonly='true' placeholder="result">
+          </div>
+          <div class="col">
+            <button class="btn btn-primary" id="clipboard">
+              <i class="far fa-clipboard fa-2x"></i>
+            </button>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-3">
+          </div>
+          <div class="col">
+            <button class="btn btn-primary" id="generate">Generate password</button>
+          </div>
+        </div>
+
+
       </form>  
     </div>
   </main>
