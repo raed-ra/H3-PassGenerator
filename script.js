@@ -12,11 +12,11 @@ const error2El = document.getElementById('error2');
 // Password generator function is called based om user entry and event of user pushing the button /
 generateEl.addEventListener('click', (event) => {
     event.preventDefault();
-    const length = +lengthEl.value;
-	const hasLower = lowercaseEl.checked;
-	const hasUpper = uppercaseEl.checked;
-	const hasNumber = numbersEl.checked;
-	const hasSymbol = symbolsEl.checked;
+    	let length = +lengthEl.value;
+	let hasLower = lowercaseEl.checked;
+	let hasUpper = uppercaseEl.checked;
+	let hasNumber = numbersEl.checked;
+	let hasSymbol = symbolsEl.checked;
 
     if ((lengthEl.value > 64) || (lengthEl.value < 8)) {
         error2El.innerText = "Length only between 8 and 64";
