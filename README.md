@@ -1,4 +1,4 @@
-https://raed-ra.github.io/Homework-3/
+https://raed-ra.github.io/H3-PassGenerator/
 
 # Homework-3
 Features of the program:
